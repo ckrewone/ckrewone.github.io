@@ -1,6 +1,7 @@
 <template>
     <v-flex class="live-code">
-        <v-flex class="code">
+        {{this.styles}}
+        <v-flex :style="styles" >
             {{text1}}<span :class="{
             'cursor': true,
             'cursor--invisible': this.cursor
@@ -10,6 +11,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'LiveCoding',
   data () {
@@ -19,6 +21,14 @@ export default {
       moveArray: ['1', '1', '1', 'F', 'r', 'o', 'n', 't', 'e', 'n', 'd', '0', '0', '0', '0', '1', '1', '1', '1', '1', '1', '1', '1', 'N', 'o', 'd', 'e', 'J', 'S', '0', '0', '0', '0', '0', '1', '1', '1', '1', '1', '1', 'W', 'e', 'b', '0', '0', '0'],
       cursor: true,
       delay: 400
+    }
+  },
+  computed: {
+    ...mapGetters('style', ['pageY']),
+    styles () {
+      return {
+        marginLeft: this.pageY
+      }
     }
   },
   methods: {
@@ -36,8 +46,7 @@ export default {
           this.text1 = this.text1.slice(0, -1)
           this.delay = 200
         } else {
-          if (current !== '0')
-            this.text1 = this.text1 + current
+          if (current !== '0') { this.text1 = this.text1 + current }
         }
         this.liveCode(index !== this.moveArray.length - 1 ? index + 1 : 0)
       }, Math.random() * this.delay)

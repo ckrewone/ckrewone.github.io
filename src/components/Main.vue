@@ -1,32 +1,55 @@
 <template>
-    <v-layout class="base">
+    <v-layout class="base" @scroll="scroll">
         <v-flex class="nav">
+
             <div class="name">Michal Zakowski</div>
             <v-layout class="nav-list">
-                <button class=" nav-item nav-item__1">O mnie</button>
+                <button class="nav-item nav-item__1" v-scroll-to="'#about'">O mnie</button>
                 <button class="nav-item nav-item__2">Projekty</button>
                 <button class="nav-item nav-item__3">Kontakt</button>
             </v-layout>
             <div class="line"></div>
             <v-img :src="img" :width="200" class="logo card-1"></v-img>
-            <LiveCoding/>
         </v-flex>
+        <LiveCoding :pageY="pageY"/>
+        <v-flex href="#about" id="about" class="about"></v-flex>
     </v-layout>
 </template>
 
 <script>
 import img from '../assets/mike5.jpg'
 import LiveCoding from './LiveCoding'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Home',
   data () {
     return {
-      img
+      img,
+      pageY: 0
     }
   },
   components: {
     LiveCoding
+  },
+  computed: {
+    liveStyles () {
+      return {
+        marginLeft: this.testy
+      }
+    }
+  },
+  methods: {
+    ...mapMutations('style', ['UPDATE_PAGE_Y']),
+    scroll (e) {
+      this.UPDATE_PAGE_Y(e.pageY)
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.scroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.scroll)
   }
 }
 </script>
@@ -121,5 +144,14 @@ export default {
                 transition: all .2s ease-in-out;
             }
         }
+    }
+    .about {
+        z-index: 100;
+        top: 120vh;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 1000px;
+        background: #020024;
     }
 </style>

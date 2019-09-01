@@ -1,0 +1,22 @@
+@-moz-document domain("github.com"), domain("gist.github.com"), domain("render.githubusercontent.com") {
+    /* Hasklig https://github.com/i-tu/Hasklig */
+    /* Fira Code https://github.com/tonsky/FiraCode */
+    /* Ligaturizer https://github.com/ToxicFrog/Ligaturizer */
+    .branch-name,
+    .blob-num,
+    .blob-code-inner,
+    .CodeMirror pre,
+    .commit .sha,
+    .commit-desc pre,
+    .commit-ref,
+    .file-info,
+    .gollum-editor .gollum-editor-body,
+    .input-monospace, .rgh-monospace-textareas .comment-form-textarea,
+    input.url-field,
+    pre,
+    code,
+    tt {
+        font-family: "Hasklig", "Fira Code", "SF Mono", "Operator Mono Lig", "LigaInconsolata", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace !important;
+        text-rendering: optimizeLegibility;
+    }
+}

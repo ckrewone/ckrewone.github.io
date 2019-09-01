@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dabf9abb-2481-435b-9199-5d2de85227f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/26906981_1430700047036034_5429918971144578573_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/mike.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/mike2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/mike3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/mike4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/mike5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/user.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Main.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/icons/FontAwesomeSvgIcons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/stylesheet/font.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/stylesheet/main.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/example.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

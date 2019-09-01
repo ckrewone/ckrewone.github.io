@@ -1,17 +1,17 @@
 <template>
     <v-layout class="base" @scroll="scroll">
-        <v-flex class="nav">
+        <v-flex class="nav" :style="navStyles">
 
-            <div class="name">Michal Zakowski</div>
+            <div :style="nameStyles" class="name">Michal Zakowski </div>
             <v-layout class="nav-list">
                 <button class="nav-item nav-item__1" v-scroll-to="'#about'">O mnie</button>
                 <button class="nav-item nav-item__2">Projekty</button>
                 <button class="nav-item nav-item__3">Kontakt</button>
             </v-layout>
-            <div class="line"></div>
-            <v-img :src="img" :width="200" class="logo card-1"></v-img>
+            <div :style="lineStyles" class="line"></div>
+            <v-img :style="logoStyles" :src="img" class="logo card-1"></v-img>
         </v-flex>
-        <LiveCoding :pageY="pageY"/>
+        <LiveCoding/>
         <v-flex href="#about" id="about" class="about"></v-flex>
     </v-layout>
 </template>
@@ -19,23 +19,52 @@
 <script>
 import img from '../assets/mike5.jpg'
 import LiveCoding from './LiveCoding'
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
   data () {
     return {
-      img,
-      pageY: 0
+      img
     }
   },
   components: {
     LiveCoding
   },
   computed: {
-    liveStyles () {
-      return {
-        marginLeft: this.testy
+    ...mapGetters('style', ['pageY']),
+    navStyles () {
+      if (this.pageY < 400) {
+        return 'margin-top: -' + this.pageY + 'px'
+      } else {
+        return 'margin-top: -400px'
+      }
+    },
+    nameStyles () {
+      if (this.pageY > 250) {
+        return 'opacity: ' + (350 - this.pageY) / 100
+      } else if (this.pageY < 250) {
+        return 'opacity: 1'
+      } else {
+        return 'opacity: 0'
+      }
+    },
+    logoStyles () {
+      if (this.pageY > 250) {
+        return 'margin-top: ' + ((350 - this.pageY) - 90) + 'px'
+      } else if (this.pageY < 250) {
+        return ''
+      } else {
+        return 'margin-top: -1500px'
+      }
+    },
+    lineStyles () {
+      if (this.pageY > 250) {
+        return 'background: #fff; height: ' + (100 - (350 - this.pageY)) + 'px ; margin-top: -' + (100 -(350 - this.pageY)) + 'px; border-bottom: #000 3.4px solid; opacity: ' + (1 - ((350 - this.pageY) / 100))
+      } else if (this.pageY < 350) {
+        return 'opacity: ' + (250 - this.pageY) / 100
+      } else {
+        return 'opacity: ' + (350 - this.pageY) / 100
       }
     }
   },
@@ -60,6 +89,7 @@ export default {
     }
 
     .nav {
+        z-index: 100;
         position: fixed;
     }
 
@@ -78,6 +108,7 @@ export default {
     .logo {
         top: 50vh;
         left: 50vw;
+        width: 200px;
         transform: translate(-50%, -50%);
         border: #020024 5px solid;
         border-radius: 200px;

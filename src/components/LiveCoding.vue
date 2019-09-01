@@ -1,7 +1,6 @@
 <template>
     <v-flex class="live-code">
-        {{this.styles}}
-        <v-flex :style="styles" >
+        <v-flex :style="style" class="code">
             {{text1}}<span :class="{
             'cursor': true,
             'cursor--invisible': this.cursor
@@ -25,10 +24,8 @@ export default {
   },
   computed: {
     ...mapGetters('style', ['pageY']),
-    styles () {
-      return {
-        marginLeft: this.pageY
-      }
+    style () {
+      return 'margin-left: ' + this.pageY * 4 + 'px'
     }
   },
   methods: {

@@ -1,13 +1,18 @@
 const style = {
   state: {
-    pageY: 0
+    pageY: 0,
+    style: {
+      marginLeft: 0
+    }
   },
   getters: {
-    pageY: (state) => state.pageY
+    pageY: (state) => state.pageY,
+    style: (state) => state.style
   },
   mutations: {
     UPDATE_PAGE_Y (state, payload) {
       state.pageY = payload
+      state.style.marginLeft = payload
     }
   },
   actions: {

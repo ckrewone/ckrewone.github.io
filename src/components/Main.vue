@@ -1,4 +1,6 @@
 <template>
+    <v-flex>
+    <Toolbar/>
     <v-layout class="base" @scroll="scroll">
         <v-flex class="nav" :style="navStyles">
 
@@ -14,12 +16,14 @@
         <LiveCoding/>
         <v-flex href="#about" id="about" class="about"></v-flex>
     </v-layout>
+    </v-flex>
 </template>
 
 <script>
 import img from '../assets/mike5.jpg'
 import LiveCoding from './LiveCoding'
 import { mapMutations, mapGetters } from 'vuex'
+import Toolbar from './Toolbar'
 
 export default {
   name: 'Home',
@@ -29,6 +33,7 @@ export default {
     }
   },
   components: {
+    Toolbar,
     LiveCoding
   },
   computed: {
@@ -51,7 +56,7 @@ export default {
     },
     logoStyles () {
       if (this.pageY > 250) {
-        return 'margin-top: ' + ((350 - this.pageY) - 90) + 'px'
+        return 'margin-top: ' + ((350 - this.pageY) - 90) + 'vh'
       } else if (this.pageY < 250) {
         return ''
       } else {
@@ -70,8 +75,8 @@ export default {
   },
   methods: {
     ...mapMutations('style', ['UPDATE_PAGE_Y']),
-    scroll (e) {
-      this.UPDATE_PAGE_Y(e.pageY)
+    scroll () {
+      this.UPDATE_PAGE_Y(window.scrollY)
     }
   },
   created () {
@@ -95,7 +100,7 @@ export default {
 
     .name {
         position: absolute;
-        font-size: 35px;
+        font-size: 25px;
         font-style: italic;
         white-space: nowrap;
         opacity: .8;

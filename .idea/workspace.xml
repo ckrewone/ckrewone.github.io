@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dabf9abb-2481-435b-9199-5d2de85227f3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/app.fd1ef59a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/chunk-vendors.8dee9ffe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mike5.8f29a3ea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.80d02549.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.80d02549.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chunk-vendors.82c23d36.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chunk-vendors.82c23d36.js.map" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,6 +86,7 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/../gsd-poolplanning/node_modules/@vue/cli-plugin-unit-jest/generator/template/tests/unit/example.spec.js" />
+        <option value="$PROJECT_DIR$/node_modules/@vue/cli-plugin-unit-jest/generator/template/tests/unit/example.spec.js" />
       </list>
     </option>
   </component>

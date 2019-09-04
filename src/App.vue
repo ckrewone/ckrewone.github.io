@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="app">
     <Main />
   </v-app>
 </template>
@@ -15,4 +15,7 @@ export default {
 };
 </script>
 
-<style lang="sass"></style>
+<style lang="sass">
+  .app
+    background: #ffffff !important
+</style>

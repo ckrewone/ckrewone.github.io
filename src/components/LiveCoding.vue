@@ -66,7 +66,7 @@ export default {
 
     .code {
         text-align: center;
-        font-size: 56px;
+        font-size: 2rem;
     }
     .cursor{
         height: 100%;

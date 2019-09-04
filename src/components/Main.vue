@@ -1,20 +1,37 @@
 <template>
     <v-flex>
+       <NavigationDraver></NavigationDraver>
     <Toolbar/>
     <v-layout class="base" @scroll="scroll">
-        <v-flex class="nav" :style="navStyles">
-
-            <div :style="nameStyles" class="name">Michal Zakowski </div>
-            <v-layout class="nav-list">
-                <button class="nav-item nav-item__1" v-scroll-to="'#about'">O mnie</button>
-                <button class="nav-item nav-item__2">Projekty</button>
-                <button class="nav-item nav-item__3">Kontakt</button>
+        <v-flex class="nav" :style="logoStyles">
+            <div :class="{
+            'name name--big' : $vuetify.breakpoint.mdAndUp,
+            'name name--mobile' : !$vuetify.breakpoint.mdAndUp
+            }">Michal Zakowski </div>
+            <v-layout v-show="$vuetify.breakpoint.mdAndUp" class="nav-list">
+                <button class="nav-item nav-item__1" >O mnie</button>
+                <button class="nav-item nav-item__2" v-scroll-to="'#projects'">Projekty</button>
+                <button class="nav-item nav-item__3" v-scroll-to="'#contact'">Kontakt</button>
             </v-layout>
-            <div :style="lineStyles" class="line"></div>
-            <v-img :style="logoStyles" :src="img" class="logo card-1"></v-img>
+            <div class="line"></div>
+            <v-img :src="img" class="logo card-1" :class="{
+            'logo logo--big' : $vuetify.breakpoint.mdAndUp,
+            'logo logo--mobile' : !$vuetify.breakpoint.mdAndUp
+            }"></v-img>
         </v-flex>
         <LiveCoding/>
-        <v-flex href="#about" id="about" class="about"></v-flex>
+        <v-flex href="#about" id="about" class="about">
+            <h1>O mnie</h1>
+            <p>lorem ipsum dolar amet</p>
+        </v-flex>
+        <v-flex href="#projects" id="projects" class="projects">
+            <h1>Projekty</h1>
+            <p>lorem ipsum dolar amet</p>
+        </v-flex>
+        <v-flex href="#contact" id="contact" class="contact">
+            <h1>kontakt</h1>
+            <p>lorem ipsum dolar amet</p>
+        </v-flex>
     </v-layout>
     </v-flex>
 </template>
@@ -24,6 +41,7 @@ import img from '../assets/mike5.jpg'
 import LiveCoding from './LiveCoding'
 import { mapMutations, mapGetters } from 'vuex'
 import Toolbar from './Toolbar'
+import NavigationDraver from './NavigationDraver'
 
 export default {
   name: 'Home',
@@ -34,7 +52,8 @@ export default {
   },
   components: {
     Toolbar,
-    LiveCoding
+    LiveCoding,
+    NavigationDraver
   },
   computed: {
     ...mapGetters('style', ['pageY']),
@@ -55,23 +74,14 @@ export default {
       }
     },
     logoStyles () {
-      if (this.pageY > 250) {
-        return 'margin-top: ' + ((350 - this.pageY) - 90) + 'vh'
-      } else if (this.pageY < 250) {
+      if (this.pageY > 150) {
+        return 'margin-top: ' + ((250 - this.pageY) - 90) + 'px; opacity: ' + (350 - this.pageY) / 100
+      } else if (this.pageY < 150) {
         return ''
       } else {
         return 'margin-top: -1500px'
       }
     },
-    lineStyles () {
-      if (this.pageY > 250) {
-        return 'background: #fff; height: ' + (100 - (350 - this.pageY)) + 'px ; margin-top: -' + (100 -(350 - this.pageY)) + 'px; border-bottom: #000 3.4px solid; opacity: ' + (1 - ((350 - this.pageY) / 100))
-      } else if (this.pageY < 350) {
-        return 'opacity: ' + (250 - this.pageY) / 100
-      } else {
-        return 'opacity: ' + (350 - this.pageY) / 100
-      }
-    }
   },
   methods: {
     ...mapMutations('style', ['UPDATE_PAGE_Y']),
@@ -94,29 +104,47 @@ export default {
     }
 
     .nav {
-        z-index: 100;
+        z-index: 10;
         position: fixed;
     }
 
     .name {
         position: absolute;
-        font-size: 25px;
-        font-style: italic;
-        white-space: nowrap;
-        opacity: .8;
-        top: 45vh;
-        left: 50vw;
-        margin-left: -450px;
-        width: 100%;
+        &--big {
+            width: 100%;
+            font-size: 25px;
+            font-style: italic;
+            white-space: nowrap;
+            opacity: .8;
+            top: 45vh;
+            left: 50vw;
+            margin-left: -450px;
+        }
+        &--mobile {
+            width: 100vw;
+            top: 50vh;
+            margin-top: 120px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
     }
 
     .logo {
         top: 50vh;
+        z-index: 1;
         left: 50vw;
-        width: 200px;
+        opacity: 1;
         transform: translate(-50%, -50%);
+        -webkit-transition: all 2s linear; /* Safari prior 6.1 */
+        transition: all 2s linear;
         border: #020024 5px solid;
         border-radius: 200px;
+        &--big{
+            width: 300px;
+        }
+        &--mobile{
+            width: 150px;
+        }
     }
 
     .card-1 {
@@ -182,12 +210,33 @@ export default {
         }
     }
     .about {
-        z-index: 100;
+        padding-top: 100px;
+        z-index: -1;
         top: 120vh;
         left: 0;
         position: absolute;
         height: 100%;
         width: 1000px;
-        background: #020024;
+        background: #00aef6;
+    }
+    .projects {
+        padding-top: 100px;
+        z-index: -1;
+        top: 240vh;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 800px;
+        background: #aedd00;
+    }
+    .contact {
+        padding-top: 100px;
+        z-index: -1;
+        top: 360vh;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: 500px;
+        background: #a300fe;
     }
 </style>

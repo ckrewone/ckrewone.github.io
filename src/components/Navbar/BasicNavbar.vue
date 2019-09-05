@@ -5,7 +5,7 @@
 
             <v-spacer></v-spacer>
             <template v-if="$vuetify.breakpoint.mdAndUp">
-                <v-btn flat v-for="item in items">
+                <v-btn flat v-for="(item, index) in items" v-scroll-to="`${item.scrollTo}`" :key="index">
                     {{item.title}}
                 </v-btn>
             </template>
@@ -29,7 +29,7 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name: 'Toolbar',
+  name: 'BasicNavbar',
   data () {
     return {
       windowHeight: window.innerHeight,

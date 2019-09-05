@@ -5,7 +5,7 @@ cd ..
 
 rm -rf ./css ./img ./js ./index.html
 echo Deleted old bundle
-cp ./dist/* ./
+cp -r ./dist/* ./
 echo Moved new version
 git add .
 git commit -m "Deploy"

@@ -1,5 +1,6 @@
 <template>
   <v-flex>
+    <CustomDiv/>
     <NavigationDraver></NavigationDraver>
     <v-layout class="base" @scroll="scroll">
       <BasicNavbar/>
@@ -22,6 +23,7 @@ import HomeNavbar from './Navbar/HomeNavbar'
 import About from './Info/About'
 import Projects from './Info/Projects'
 import Contact from './Info/Contact'
+import CustomDiv from './CustomDiv'
 
 export default {
   name: 'Home',
@@ -37,7 +39,8 @@ export default {
     HomeNavbar,
     About,
     Projects,
-    Contact
+    Contact,
+    CustomDiv
   },
   computed: {
     ...mapGetters('style', ['pageY']),

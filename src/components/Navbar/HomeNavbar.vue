@@ -2,18 +2,21 @@
   <v-flex class="nav" id="home" :style="logoStyles">
     <div :class="{
             'name name--big' : $vuetify.breakpoint.mdAndUp,
-            'name name--mobile' : !$vuetify.breakpoint.mdAndUp
+            'name name--mobile' : !$vuetify.breakpoint.mdAndUp,
+            'name name--mobile--wide' : !$vuetify.breakpoint.mdAndUp && isMobileWide,
+            'name name--big--wide' : $vuetify.breakpoint.mdAndUp && isDesktopWide,
             }">{{this.name}}
     </div>
     <v-layout v-show="$vuetify.breakpoint.mdAndUp" class="nav-list">
       <template v-for="(item, index) in items">
-        <button :key="index" class="nav-item" v-scroll-to="item.scrollTo">{{item.title}}</button>
+        <button :key="index" v-show="index" class="nav-item" v-scroll-to="item.scrollTo">{{item.title}}</button>
       </template>
     </v-layout>
     <div class="line"></div>
     <v-img :src="img" class="logo card-1" :class="{
             'logo logo--big' : $vuetify.breakpoint.mdAndUp,
-            'logo logo--mobile' : !$vuetify.breakpoint.mdAndUp
+            'logo logo--mobile' : !$vuetify.breakpoint.mdAndUp,
+            'logo logo--mobile--wide' : !$vuetify.breakpoint.mdAndUp && isMobileWide,
             }"></v-img>
   </v-flex>
 </template>
@@ -40,6 +43,12 @@ export default {
       } else {
         return 'margin-top: -1500px'
       }
+    },
+    isDesktopWide () {
+      return window.innerHeight < 500
+    },
+    isMobileWide () {
+      return window.innerHeight < 450
     }
   }
 }
@@ -63,6 +72,9 @@ export default {
       top: 45vh;
       left: 50vw;
       margin-left: -450px;
+      &--wide {
+        top: 43vh;
+      }
     }
 
     &--mobile {
@@ -71,6 +83,10 @@ export default {
       margin-top: 120px;
       text-align: center;
       font-size: 1.2rem;
+      &--wide{
+        top: 15vh;
+        margin-top: 0px;
+      }
     }
   }
 
@@ -92,6 +108,9 @@ export default {
     &--mobile {
       margin-bottom: 10vh;
       width: 200px;
+      &--wide {
+        width: 150px;
+      }
     }
   }
 
@@ -117,7 +136,7 @@ export default {
     position: absolute;
     top: 45vh;
     left: 50vw;
-    width: 300px;
+    width: 400px;
     height: 40px;
     margin-left: 150px;
     display: inline-block;

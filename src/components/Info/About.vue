@@ -6,8 +6,10 @@
 </template>
 
 <script>
+import CustomDiv from '../CustomDiv'
 export default {
-  name: 'About'
+  name: 'About',
+  components: { CustomDiv }
 }
 </script>
 

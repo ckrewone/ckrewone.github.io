@@ -1,16 +1,6 @@
 <template>
     <div class="navbar" v-show="showNav">
-        <v-toolbar dense class="toolbar" fixed color="rgba(255,255,255,0.2)" flat collapse v-if="$vuetify.breakpoint.mdAndUp">
-            <v-toolbar-title large>MZ</v-toolbar-title>
-
-            <v-spacer></v-spacer>
-            <template v-if="$vuetify.breakpoint.mdAndUp">
-                <v-btn flat v-for="(item, index) in items" v-scroll-to="item.scrollTo" :key="index">
-                    {{item.title}}
-                </v-btn>
-            </template>
-        </v-toolbar>
-        <v-toolbar class="toolbar" flat color="rgba(0,0,0,0)" fixed v-else>
+        <v-toolbar class="toolbar" flat color="rgba(0,0,0,0)" fixed>
             <div class="menu back menu--3">
                 <label>
                     <input type="checkbox" v-model="drawer">
@@ -41,7 +31,7 @@ export default {
     ...mapGetters('style', ['pageY']),
     ...mapGetters('info', ['getdrawer', 'items']),
     showNav () {
-      return (this.windowHeight / 2) < this.pageY || this.$vuetify.breakpoint.mdAndDown
+      return (this.windowHeight / 2) < this.pageY || this.$vuetify.breakpoint.smAndDown
     },
     drawer: {
       get () { return this.getdrawer },

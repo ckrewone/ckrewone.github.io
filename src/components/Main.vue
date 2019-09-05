@@ -1,6 +1,5 @@
 <template>
   <v-flex>
-    <CustomDiv/>
     <NavigationDraver></NavigationDraver>
     <v-layout class="base" @scroll="scroll">
       <BasicNavbar/>

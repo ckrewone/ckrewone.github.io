@@ -5,7 +5,7 @@
 
             <v-spacer></v-spacer>
             <template v-if="$vuetify.breakpoint.mdAndUp">
-                <v-btn flat v-for="(item, index) in items" v-scroll-to="`${item.scrollTo}`" :key="index">
+                <v-btn flat v-for="(item, index) in items" v-scroll-to="item.scrollTo" :key="index">
                     {{item.title}}
                 </v-btn>
             </template>

@@ -12,10 +12,11 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import { ICONS } from './icons/FontAwesomeSvgIcons'
 import * as VueScrollTo from 'vue-scrollto'
 
-
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 library.add(fas, far)
-Vue.use(VueScrollTo)
+Vue.use(VueScrollTo, {
+  duration: 2000
+})
 Vue.use(Vuetify, {
   icons: ICONS
 })

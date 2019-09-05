@@ -3,16 +3,35 @@ const style = {
     name: 'Michal Zakowski',
     items: [
       {
+        title: 'Home',
+        scrollTo: {
+          element: '#home',
+          easing: [0.175, 0.885, 0.32, 1.075]
+        }
+      },
+      {
         title: 'O mnie',
-        scrollTo: '#about'
+        scrollTo: {
+          el: '#about',
+          easing: [0.175, 0.885, 0.32, 1.075],
+          duration: 1500
+        }
       },
       {
         title: 'Projekty',
-        scrollTo: '#projects'
+        scrollTo: {
+          el: '#projects',
+          easing: [0.175, 0.885, 0.32, 1.075],
+          duration: 1500
+        }
       },
       {
         title: 'Kontakt',
-        scrollTo: '#contact'
+        scrollTo: {
+          el: '#contact',
+          easing: [0.175, 0.885, 0.32, 1.075],
+          duration: 1500
+        }
       }
     ],
     drawer: false

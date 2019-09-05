@@ -24,7 +24,7 @@
                     v-for="item in items"
                     :key="item.title"
                     @click="updateDrawer(false)"
-                    v-scroll-to="`${item.scrollTo}`"
+                    v-scroll-to="item.scrollTo"
                     class="list-tile"
             >
                 <v-list-tile-content>
@@ -44,7 +44,7 @@ export default {
     drawer: {
       get () { return this.getdrawer },
       set (value) { this.updateDrawer(value) }
-    },
+    }
   },
   methods: {
     ...mapActions('info', ['updateDrawer'])

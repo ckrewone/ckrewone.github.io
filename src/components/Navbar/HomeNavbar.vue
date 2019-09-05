@@ -1,6 +1,5 @@
 <template>
-  <v-flex class="nav" :style="logoStyles">
-    <h1>Test</h1>
+  <v-flex class="nav" id="home" :style="logoStyles">
     <div :class="{
             'name name--big' : $vuetify.breakpoint.mdAndUp,
             'name name--mobile' : !$vuetify.breakpoint.mdAndUp
@@ -8,7 +7,7 @@
     </div>
     <v-layout v-show="$vuetify.breakpoint.mdAndUp" class="nav-list">
       <template v-for="(item, index) in items">
-        <button :key="index" class="nav-item" v-scroll-to="`${item.scrollTo}`">{{item.title}}</button>
+        <button :key="index" class="nav-item" v-scroll-to="item.scrollTo">{{item.title}}</button>
       </template>
     </v-layout>
     <div class="line"></div>

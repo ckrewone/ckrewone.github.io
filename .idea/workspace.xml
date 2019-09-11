@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dabf9abb-2481-435b-9199-5d2de85227f3" name="Default Changelist" comment="" />
+    <list default="true" id="dabf9abb-2481-435b-9199-5d2de85227f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/app.36ad342a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/chunk-vendors.8dee9ffe.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/32524349.cbf828a9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.63f6cd78.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.63f6cd78.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chunk-vendors.b6e33574.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/chunk-vendors.b6e33574.js.map" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +49,10 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>

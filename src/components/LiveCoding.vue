@@ -25,7 +25,11 @@ export default {
   computed: {
     ...mapGetters('style', ['pageY']),
     style () {
-      return 'margin-left: ' + this.pageY * 4 + 'px'
+      if (this.pageY < 100) {
+        return 'margin-top: 0; opacity:1'
+      } else {
+        return 'marginTop: 100px; opacity:0'
+      }
     }
   },
   methods: {
@@ -67,6 +71,7 @@ export default {
     .code {
         text-align: center;
         font-size: 2rem;
+        transition: margin-top 500ms ease-in-out, opacity 500ms ease-in-out;
     }
     .cursor{
         height: 100%;

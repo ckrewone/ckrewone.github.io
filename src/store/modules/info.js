@@ -5,15 +5,13 @@ const style = {
       {
         title: 'Home',
         scrollTo: {
-          element: '#home',
-          easing: [0.175, 0.885, 0.32, 1.075]
+          element: '#home'
         }
       },
       {
         title: 'O mnie',
         scrollTo: {
           el: '#about',
-          easing: [0.175, 0.885, 0.32, 1.075],
           duration: 1500
         }
       },
@@ -21,7 +19,6 @@ const style = {
         title: 'Projekty',
         scrollTo: {
           el: '#projects',
-          easing: [0.175, 0.885, 0.32, 1.075],
           duration: 1500
         }
       },
@@ -29,7 +26,6 @@ const style = {
         title: 'Kontakt',
         scrollTo: {
           el: '#contact',
-          easing: [0.175, 0.885, 0.32, 1.075],
           duration: 1500
         }
       }

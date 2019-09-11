@@ -1,29 +1,52 @@
 <template>
-    <v-flex href="#projects" id="projects" class="projects">
-        <v-flex class="parallelogram">
+    <v-flex class="parallelogram">
+        <transition name="fade">
+            <v-flex class="content-projects" v-show="show">
+                <v-flex class="content-projects__title">
+                    projekty
+                </v-flex>
+                <v-flex class="content-projects__text">
+                    sadsaa
+                </v-flex>
+            </v-flex>
+        </transition>
+        <transition name="fade">
+            <v-flex v-show="show">
             <v-flex class="parallelogram__5 parallelogram--absolute"></v-flex>
             <v-flex class="parallelogram__6 parallelogram--absolute"></v-flex>
             <v-flex class="parallelogram__7 parallelogram--absolute"></v-flex>
             <v-flex class="parallelogram__8 parallelogram--absolute"></v-flex>
             <v-flex class="recentage parallelogram--absolute"></v-flex>
-        </v-flex>
+            </v-flex>
+        </transition>
     </v-flex>
 </template>
 
 <script>
-  export default {
-    name: 'Projects'
+export default {
+  name: 'ProjectsDesktop',
+  props: {
+    show: Boolean
   }
+}
 </script>
 
 <style lang="scss">
-    .projects {
-        top: 300vh;
-        left: 0;
+    .content-projects {
         position: absolute;
-        height: 100vh;
-        width: 100vw;
-        margin-top: -50px;
+        z-index: 11;
+        right: 0;
+        width: 400px;
+        text-align: center;
+
+        &__title {
+            font-size: 82px;
+            margin-top: 20px;
+        }
+
+        &__text {
+            font-size: 26px;
+        }
     }
 
     .parallelogram {
@@ -84,18 +107,18 @@
         }
     }
 
-    .recentage{
-      background: #bdbdbd;
-      width: 700px;
-      height: 500px;
-      margin-top: 50px;
-      margin-left: 50px;
-      z-index: 9;
-      -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    .recentage {
+        background: #bdbdbd;
+        width: 700px;
+        height: 500px;
+        margin-top: 50px;
+        margin-left: 50px;
+        z-index: 9;
+        -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        -moz-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        -ms-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        -o-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     }
 
     .title {

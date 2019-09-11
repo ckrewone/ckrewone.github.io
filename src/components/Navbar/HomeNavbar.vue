@@ -36,12 +36,10 @@ export default {
     ...mapGetters('style', ['pageY']),
     ...mapGetters('info', ['name', 'items']),
     logoStyles () {
-      if (this.pageY > 150) {
-        return 'margin-top: ' + ((250 - this.pageY) - 90) + 'px; opacity: ' + (350 - this.pageY) / 100
-      } else if (this.pageY < 150) {
-        return ''
+      if (this.pageY > 100) {
+        return 'opacity:0; margin-top: -100px'
       } else {
-        return 'margin-top: -1500px'
+        return 'opacity:1; margin-top: 0'
       }
     },
     isDesktopWide () {
@@ -58,6 +56,7 @@ export default {
   .nav {
     z-index: 10;
     position: fixed;
+    transition: opacity 500ms ease-in-out, margin-top 500ms ease-in-out;
   }
 
   .name {

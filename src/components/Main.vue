@@ -19,10 +19,9 @@ import { mapGetters, mapMutations } from 'vuex'
 import BasicNavbar from './Navbar/BasicNavbar'
 import NavigationDraver from './Navbar/NavigationDraver'
 import HomeNavbar from './Navbar/HomeNavbar'
-import About from './Info/About'
-import Projects from './Info/Projects'
-import Contact from './Info/Contact'
-import CustomDiv from './CustomDiv'
+import About from './About/About'
+import Projects from './Projects/Projects'
+import Contact from './Contact/Contact'
 
 export default {
   name: 'Home',
@@ -38,8 +37,7 @@ export default {
     HomeNavbar,
     About,
     Projects,
-    Contact,
-    CustomDiv
+    Contact
   },
   computed: {
     ...mapGetters('style', ['pageY']),

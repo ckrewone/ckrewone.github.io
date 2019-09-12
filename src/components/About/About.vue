@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss">
     .about {
-        margin-top: 150vh;
+        margin-top: 100vh;
         height: 100vh;
         position: absolute;
         width: 100vw;

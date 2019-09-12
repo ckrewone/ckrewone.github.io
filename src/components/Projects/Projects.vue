@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss">
     .projects {
-        top: 300vh;
+        top: 180vh;
         left: 0;
         position: absolute;
         height: 100vh;

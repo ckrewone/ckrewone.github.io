@@ -1,5 +1,6 @@
 <template>
-  <v-flex class="nav" id="home" :style="logoStyles">
+  <transition name="fade">
+  <v-flex class="nav" id="home" v-show="show">
     <div :class="{
             'name name--big' : $vuetify.breakpoint.mdAndUp,
             'name name--mobile' : !$vuetify.breakpoint.mdAndUp,
@@ -19,6 +20,7 @@
             'logo logo--mobile--wide' : !$vuetify.breakpoint.mdAndUp && isMobileWide,
             }"></v-img>
   </v-flex>
+  </transition>
 </template>
 
 <script>
@@ -35,11 +37,11 @@ export default {
   computed: {
     ...mapGetters('style', ['pageY']),
     ...mapGetters('info', ['name', 'items']),
-    logoStyles () {
+    show () {
       if (this.pageY > 100) {
-        return 'opacity:0; margin-top: -100px'
+        return false
       } else {
-        return 'opacity:1; margin-top: 0'
+        return true
       }
     },
     isDesktopWide () {
@@ -174,5 +176,11 @@ export default {
         transition: all .2s ease-in-out;
       }
     }
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
   }
 </style>

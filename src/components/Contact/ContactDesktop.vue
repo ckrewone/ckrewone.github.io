@@ -19,13 +19,13 @@
                 <v-layout justify-center row>
                     <v-flex xs2>
                         <v-layout justify-center row>
-                            <v-card class="buttons-group" @click="click" elevation="10" xs1>
+                            <v-card class="buttons-group" @click="goTo('https://www.facebook.com/ckrewone')" elevation="10" xs1>
                                 <v-img :src="fb" class="img" v-ripple/>
                             </v-card>
-                            <v-card class="buttons-group text-md-center" elevation="10" xs1>
+                            <v-card class="buttons-group text-md-center" @click="goTo('https://www.linkedin.com/in/micha%C5%82-%C5%BCakowski-b0451316a/')" elevation="10" xs1>
                                 <v-img :src="linkedin" class="img" v-ripple/>
                             </v-card>
-                            <v-card class="buttons-group text-md-center" elevation="10" xs1>
+                            <v-card class="buttons-group text-md-center" @click="goTo('https://github.com/ckrewone')" elevation="10" xs1>
                                 <v-img :src="github" class="img" style="background: #fff" v-ripple/>
                             </v-card>
                         </v-layout>
@@ -56,9 +56,10 @@ export default {
       github
     }
   },
+  // https://www.linkedin.com/in/micha%C5%82-%C5%BCakowski-b0451316a/
   methods: {
-    click () {
-      console.log('dupa')
+    goTo (url) {
+      window.open(url, '_blank').focus();
     }
   }
 }

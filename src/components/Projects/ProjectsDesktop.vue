@@ -16,15 +16,19 @@
             <v-flex class="parallelogram__6 parallelogram--absolute"></v-flex>
             <v-flex class="parallelogram__7 parallelogram--absolute"></v-flex>
             <v-flex class="parallelogram__8 parallelogram--absolute"></v-flex>
-            <v-flex class="recentage parallelogram--absolute"></v-flex>
+            <v-flex class="recentage parallelogram--absolute">
+                <image-slider/>
+            </v-flex>
             </v-flex>
         </transition>
     </v-flex>
 </template>
 
 <script>
+import ImageSlider from './ImageSlider'
 export default {
   name: 'ProjectsDesktop',
+  components: { ImageSlider },
   props: {
     show: Boolean
   }

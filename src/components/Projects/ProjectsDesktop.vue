@@ -6,7 +6,7 @@
                     projekty
                 </v-flex>
                 <v-flex class="content-projects__text">
-                    sadsaa
+                    sadasd
                 </v-flex>
             </v-flex>
         </transition>

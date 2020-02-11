@@ -8,14 +8,14 @@
                 class="orange lighten-1 white--text text-xs-center"
                 flat
                 tile
-                style="width: 100%; height: 70vh;"
+                style="width: 100%; height: 50vh;"
         >
             <v-card-text class="white--text pt-0 text-md-center">
                 <v-flex style="margin-top: 20vh">
                     <h1>Kontakt</h1>
                 </v-flex>
             </v-card-text>
-            <v-card-text style="margin-top: 10vh">
+            <v-card-text>
                 <v-layout justify-center row>
                     <v-flex xs2>
                         <v-layout justify-center row>
@@ -36,7 +36,7 @@
             <v-divider></v-divider>
 
             <v-card-text class="white--text">
-                &copy;2019 — Made with love by <strong>Michał Żakowski</strong>
+                &copy;2019 — Made with ❤️ by <strong>Michał Żakowski</strong>
             </v-card-text>
         </v-card>
     </v-footer>
@@ -56,10 +56,9 @@ export default {
       github
     }
   },
-  // https://www.linkedin.com/in/micha%C5%82-%C5%BCakowski-b0451316a/
   methods: {
     goTo (url) {
-      window.open(url, '_blank').focus();
+      window.open(url, '_blank').focus()
     }
   }
 }

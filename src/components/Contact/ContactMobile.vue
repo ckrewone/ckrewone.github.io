@@ -37,7 +37,7 @@
             <v-divider></v-divider>
 
             <v-card-text class="white--text">
-                &copy;2019 — Made with 	&#x1F394; by <strong>Michał Żakowski</strong>
+                &copy;2019 — Made with ❤️ by <strong>Michał Żakowski</strong>
             </v-card-text>
         </v-card>
     </v-footer>

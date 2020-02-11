@@ -5,7 +5,9 @@
                 <v-flex xs12>
                     <v-card class="projects-mobile" color="#00c853" elevation="12" hover>
                         <v-flex class="projects-mobile__title">{{this.title}}</v-flex>
-                        <v-flex class="projects-mobile__content">{{this.text}}</v-flex>
+                        <v-flex class="projects-mobile__content">
+                            <image-slider/>
+                        </v-flex>
                     </v-card>
                 </v-flex>
             </v-layout>
@@ -14,8 +16,10 @@
 </template>
 
 <script>
+import ImageSlider from './ImageSlider'
 export default {
   name: 'ProjectsMobile',
+  components: { ImageSlider },
   data () {
     return {
       title: 'Projects',

@@ -1,26 +1,41 @@
 const projects = {
   state: {
-    pageY: 0,
-    style: {
-      marginLeft: 0
-    }
+    projects: [
+      {
+        title: 'PiioApp',
+        description: 'Lorem ipsum dolar amet 1',
+        images: []
+      },
+      {
+        title: 'JSON/XML CRUD',
+        description: 'Lorem ipsum dolar amet 2',
+        images: []
+      },
+      {
+        title: 'Portfolio',
+        description: 'Lorem ipsum dolar amet 3',
+        images: []
+      }
+    ],
+    activeIndex: 0
   },
   getters: {
-    pageY: (state) => state.pageY,
-    style: (state) => state.style
+    projects: (state) => state.projects,
+    project: (state) => index => state.projects[index],
+    activeProject: (state) => state.projects[state.activeIndex],
+    active: (state) => state.activeIndex
   },
   mutations: {
-    UPDATE_PAGE_Y (state, payload) {
-      state.pageY = payload
-      state.style.marginLeft = payload
+    SET_ACTIVE (state, payload) {
+      state.activeIndex = payload
     }
   },
   actions: {
-    updatePageY ({ commit }, payload) {
-      commit('UPDATE_PAGE_Y', payload)
+    setActive ({ commit }, payload) {
+      commit('SET_ACTIVE', payload)
     }
   },
   namespaced: true
 }
 
-export default style
+export default projects

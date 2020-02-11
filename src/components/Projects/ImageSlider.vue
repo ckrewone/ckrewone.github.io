@@ -1,10 +1,10 @@
 <template>
     <v-carousel
             hide-controls
-            @change="change"
+            @change="this.setActive"
     >
         <v-carousel-item
-                v-for="(slide, i) in slides"
+                v-for="(proj, i) in projects"
                 :key="i"
                 :value="i"
         >
@@ -16,32 +16,26 @@
                         align="center"
                         justify="center"
                 >
-                <v-flex> {{slide }}</v-flex>
+                <v-flex>{{activeProject.title}}</v-flex>
                 </v-flex>
             </v-sheet>
-          <template v-slot:project >
-            {{slide}}
-          </template>
         </v-carousel-item>
     </v-carousel>
 </template>
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export default {
   name: 'ImageSlider',
   data () {
     return {
-      slides: [
-        'PiioApp',
-        'JSON/XML CRUD',
-        'Portfolio',
-        'React invoices app'
-      ]
     }
   },
   methods: {
-    change (e) {
-      console.log(e)
-    }
+    ...mapActions('projects', ['setActive'])
+  },
+  computed: {
+    ...mapGetters('projects', ['activeProject', 'active', 'projects'])
   }
 }
 </script>

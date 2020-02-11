@@ -16,19 +16,10 @@
 </template>
 
 <script>
-import ImageSlider from './ImageSlider'
+import Project from './Project'
+
 export default {
-  name: 'ProjectsMobile',
-  components: { ImageSlider },
-  data () {
-    return {
-      title: 'Projects',
-      text: 'Lorem ipsum dolar amet'
-    }
-  },
-  props: {
-    show: Boolean
-  }
+  mixins: [Project]
 }
 </script>
 

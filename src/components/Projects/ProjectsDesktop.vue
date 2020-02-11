@@ -3,10 +3,10 @@
         <transition name="fade">
             <v-flex class="content-projects" v-show="show">
                 <v-flex class="content-projects__title">
-                    projekty
+                    {{this.title}}
                 </v-flex>
                 <v-flex class="content-projects__text">
-                    sadasd
+                    {{activeProject.description}}
                 </v-flex>
             </v-flex>
         </transition>
@@ -25,13 +25,11 @@
 </template>
 
 <script>
-import ImageSlider from './ImageSlider'
+import Project from './Project'
+
 export default {
   name: 'ProjectsDesktop',
-  components: { ImageSlider },
-  props: {
-    show: Boolean
-  }
+  mixins: [Project]
 }
 </script>
 

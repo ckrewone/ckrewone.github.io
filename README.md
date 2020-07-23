@@ -1,4 +1,3 @@
-# gsd-poolplanning
 
 ## Project setup
 ```
